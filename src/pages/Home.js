@@ -1,9 +1,9 @@
 import React from 'react'
-import styled, { createGlobalStyle } from 'styled-components'
-import { Container, Brand } from '../components/atoms'
+import { createGlobalStyle } from 'styled-components'
 import { Navbar } from '../components/molecules'
-import { colors, shadows } from '../components/variables'
-import rocket from '../assets/rocket.png'
+import { PostCardList } from '../components/organisms'
+import { colors } from '../components/variables'
+import { Container } from '../components/atoms';
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -21,24 +21,16 @@ const GlobalStyles = createGlobalStyle`
     width: 100%;
   }
 `
-const Logo = styled.img`
-  object-fit: contain;
-  height: 48px;
-`
 
 class Home extends React.Component {
-  
   render() {
     return (
       <div>
         <GlobalStyles />
-        <Navbar>
-          <Container>
-            <Logo src={rocket} />
-            <Brand>Rocket</Brand>
-          </Container>
-        </Navbar>
-        
+        <Navbar />
+        <Container>
+          <PostCardList />
+        </Container>
       </div>
     )
   }

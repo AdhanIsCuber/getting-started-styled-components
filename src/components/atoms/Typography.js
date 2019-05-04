@@ -1,18 +1,25 @@
 import styled from 'styled-components'
 import { colors } from '../variables' 
 
-const Text = styled.p`
+export const Title = styled.h1`
   color: ${({ color }) => color || colors.primaryDark };
+  font-size: ${({ fontSize }) => fontSize || '24px'};
+  margin:${({ margin }) => margin || 0};
 `
 
-const Brand = styled.h1`
-
+export const Brand = styled(Title)`
+  font-size: ${({ fontSize }) => fontSize || '32px'};
+  text-transform: uppercase;
 `
 
-const Title = styled.h1`
-
+export const Subtitle = styled.h3`
+  color: ${({ color }) => color || colors.primaryDark };
+  font-size: ${({ fontSize }) => fontSize || '16px'};
+  margin: 0 0 8px 0;
 `
 
-const Subtitle = styled.h3`
-
+export const Text = styled.p`
+  color: ${({ color }) => color || colors.primaryDark };
+  font-size: ${({ fontSize }) => fontSize || '14px'};
+  margin: 0 0 8px 0;
 `

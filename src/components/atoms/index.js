@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import { Brand, Title, Subtitle, Text } from './Typography'
+import { Button, OutlineButton } from './Button'
 
 const Wrapper = styled.div`
   display: flex;
@@ -10,7 +12,7 @@ const Wrapper = styled.div`
 const Container = styled.div`
   margin: 0 auto;
   width: inherit;
-  max-width: 900px;
+  max-width: 640px;
   @media (max-width: 768px) {
     max-width: 480px;
   }
@@ -18,5 +20,11 @@ const Container = styled.div`
 
 export {
   Wrapper,
-  Container
+  Container,
+  Brand,
+  Title,
+  Subtitle,
+  Text,
+  Button,
+  OutlineButton
 }

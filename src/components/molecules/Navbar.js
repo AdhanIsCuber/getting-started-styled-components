@@ -1,7 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Wrapper } from '../atoms'
+import { Link } from 'react-router-dom'
+import { Wrapper, Container, Brand } from '../atoms'
 import { colors, shadows } from '../variables'
+import rocket from '../../assets/rocket.png'
+import profile from '../../assets/user.svg'
 
 const NavbarWrapper = styled(Wrapper)`
   width: 100%;
@@ -15,9 +18,43 @@ const NavbarWrapper = styled(Wrapper)`
   margin: 0 auto;
 `
 
-const Navbar = ({ children }) => (
+const Logo = styled.img`
+  object-fit: contain;
+  height: 48px;
+`
+
+const Icon = styled.img`
+  width: ${({ size }) => size || undefined};
+  height: ${({ size }) => size || undefined};
+`
+
+const NavbarItems = styled(Wrapper)`
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`
+
+const Anchor = styled(Link)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 99px;
+  &:hover {
+    background-color: ${colors.primaryDark};
+  }
+`
+
+const Navbar = () => (
   <NavbarWrapper>
-    {children}
+    <Container>
+      <NavbarItems>
+        <Logo src={rocket} />
+        <Brand>Rocket</Brand>
+        <Anchor to="/about" >
+          <Icon size="36px" src={profile} />
+        </Anchor>
+      </NavbarItems>
+    </Container>
   </NavbarWrapper>
 )
 

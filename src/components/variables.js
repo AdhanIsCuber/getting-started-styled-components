@@ -8,8 +8,8 @@ const colors = {
 }
 
 const shadows = {
-  idle: '0 2px 4px 0 rgba(0, 0, 0, 0.4)',
-  focus: '0 2px 8px 0 rgba(0, 0, 0, 0.4)',
+  idle: '0 2px 8px 0 rgba(0, 0, 0, 0.1)',
+  focus: '0 2px 16px 0 rgba(0, 0, 0, 0.1)',
 }
 
 export {

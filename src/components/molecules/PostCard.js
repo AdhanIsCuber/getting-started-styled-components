@@ -1,14 +1,34 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Wrapper } from '../components/atoms'
-import { colors, shadows } from '../components/variables'
+import { Wrapper, Subtitle, Text } from '../atoms'
+import { colors, shadows } from '../variables'
 
 const PostCardWrapper = styled(Wrapper)`
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4)
-  border-radius: 8px;
+  width: 100%;
+  box-shadow: ${shadows.idle};
+  border-radius: 16px;
   background-color: ${colors.white};
+  overflow: hidden;
+  margin-bottom: 24px;
+  &:hover {
+    box-shadow: ${shadows.focus};
+  }
+`
+const PostCaptionWrapper = styled(Wrapper)`
+  padding: 16px 24px;
+`
+const Image = styled.img`
+  width: 100%;
 `
 
-const PostCard = ({  }) => {
-  
-}
+const PostCard = ({data: {id, name, caption, url}}) => (
+  <PostCardWrapper key={id}>
+    <Image src={url} />
+    <PostCaptionWrapper>
+      <Subtitle>{name}</Subtitle>
+      <Text>{caption}</Text>
+    </PostCaptionWrapper>
+  </PostCardWrapper>
+) 
+
+export default PostCard
